@@ -25,11 +25,12 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
+	
 
 <title>Ver Usuarios!</title>
 </head>
 <div class= "container">
-
+<a class="btn btn-primary" href="CrearUsuario">Crear Usuario</a>
 <table class="table">
   <thead>
     <tr>
@@ -52,6 +53,12 @@
       <td><%=usuario.getDni() %></td>
       <td><%=usuario.getCodigo() %></td>
       <td><%=usuario.getId() %></td>
+      <td>
+      	<a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">Ver</a>
+      </td>
+      
+	 
+      
     </tr>
     
     <%} %>

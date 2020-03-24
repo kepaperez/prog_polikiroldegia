@@ -52,6 +52,8 @@
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Submit</button>
+			
+			<a href="VerActividades" class="btn btn-primary">Cancelar</a>
 		</form>
 
 	</div>

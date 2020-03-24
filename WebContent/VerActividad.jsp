@@ -64,8 +64,10 @@
 		</div>
 		
 		<div class="row mt-3">
-			<div class="col "></div>
-			<a href="VerActividades">Ver actividades</a>
+			<div class="col ">
+			
+			</div>
+			<a href="VerActividades" class="btn btn-primary">Ver actividades</a>
 		</div>
 		
 		

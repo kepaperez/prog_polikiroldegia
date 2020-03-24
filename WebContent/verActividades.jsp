@@ -21,7 +21,11 @@
   <body>
   <div class="container mt-3">
   <div class="row">
-  	<a class="btn-primary" href="CrearActividad">Crear Actividad</a>
+  <form action="">
+  	<a class="btn btn-primary" href="CrearActividad">Crear Actividad</a>
+  </form>
+  	
+  
   </div>
   
 	  <h1>Actividades</h1>
