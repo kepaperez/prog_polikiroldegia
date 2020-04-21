@@ -31,6 +31,17 @@
 </head>
 <div class= "container">
 <a class="btn btn-primary" href="CrearUsuario">Crear Usuario</a>
+<form action="BuscarUsuario" method="POST">
+				<div class="form-row align-items-center">
+						<div class="col-9">
+							<input type="text" class="form-control" name="codigo" placeholder="Buscar usuario (codigo)">
+						</div>
+						<div class="col-3">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
+
 <table class="table">
   <thead>
     <tr>
@@ -55,6 +66,7 @@
       <td><%=usuario.getId() %></td>
       <td>
       	<a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">Ver</a>
+      	<a class="btn btn-secondary" href="EditarUsuario?id=${usuario.id}">Editar</a>
       </td>
       
 	 

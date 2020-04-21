@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
- <%@ page import="java.util.ArrayList" %>
-<%@ page import="modelo.bean.Actividad" %>
-<%
-	ArrayList<Actividad> actividades = (ArrayList<Actividad>)request.getAttribute("actividades");
-%>
+    
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,24 +38,20 @@
 	  </thead>
 	  <tbody>
 	  
-	  <%for(int i = 0; i< actividades.size(); i++){ 
-	  		Actividad actividad = actividades.get(i);
-	  %>
-	  
-	    <tr>
-	      <th><a href="VerActividad?id=<%=actividad.getId()%>"><%=actividad.getNombre()%></a></th>
-	      <td><%=actividad.getFecha_inicio()%></td>
-	      <td><%=actividad.getDias()%></td>
+	  <c:forEach items="${actividades}" var="actividad"> 
+	  	  <tr>
+	      <th><a href="VerActividad?id=${actividad.id}">${actividad.nombre}</a></th>
+	      <td>${actividad.getFecha_inicio()}</td>
+	      <td>${actividad.getDias()}></td>
 	      <td>
-	      	<a class="btn btn-primary" href="VerActividad?id=<%=actividad.getId()%>">Ver</a>
-	      	<a class="btn btn-secondary" href="EditarActividad?id=<%=actividad.getId()%>">Editar</a>
-	      	<a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">Eliminar</a>
+	      	<a class="btn btn-primary" href="VerActividad?id=${actividad.id}">Ver</a>
+	      	<a class="btn btn-secondary" href="EditarActividad?id=${actividad.id}">Editar</a>
+	      	<a class="btn btn-danger" href="EliminarActividad?id=${actividad.id}">Eliminar</a>
 	      
 	      </td>
 	    </tr>
-	   
-	   <%} %>
-	   
+	   </c:forEach>
+	     
 	  </tbody>
 	</table>
   </div>
