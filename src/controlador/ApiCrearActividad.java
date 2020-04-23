@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
-import modelo.bean.Usuario;
-import modelo.dao.ModeloUsuario;
+import modelo.bean.Actividad;
+import modelo.dao.ModeloActividad;
 
 /**
- * Servlet implementation class ApiCrearUsuario
+ * Servlet implementation class ApiCrearActividad
  */
-@WebServlet("/ApiCrearUsuario")
-public class ApiCrearUsuario extends HttpServlet {
+@WebServlet("/ApiCrearActividad")
+public class ApiCrearActividad extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ApiCrearUsuario() {
+    public ApiCrearActividad() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,26 +43,29 @@ public class ApiCrearUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-	
 		request.setCharacterEncoding("UTF-8"); //enieak eta ondo irakurtzeko
-		String jsonUsuario = request.getParameter("usuario");
+		String jsonActividad = request.getParameter("actividad");
 		
 		
 		
-		System.out.println(jsonUsuario);
-		JSONObject jsonObject = new JSONObject(jsonUsuario);
+		System.out.println(jsonActividad);
+		JSONObject jsonObject = new JSONObject(jsonActividad);
 		
-//		komiki objektua sortu
-		Usuario usuario = new Usuario();
-		usuario.setNombreApellido(jsonObject.getString("nombreApellido"));
-		usuario.setCodigo(jsonObject.getString("codigo"));
-		usuario.setDni(jsonObject.getString("dni"));
+
+		Actividad actividad = new Actividad();
 		
-		ModeloUsuario mUsuario = new ModeloUsuario();
-		mUsuario.insert(usuario);
+		actividad.setNombre(jsonObject.getString("nombre"));
+		
+		
+		//usuario.setNombreApellido(jsonObject.getString("nombreApellido"));
+		//usuario.setCodigo(jsonObject.getString("codigo"));
+		//usuario.setDni(jsonObject.getString("dni"));
+		
+		ModeloActividad mActividad = new ModeloActividad();
+		mActividad.insert(actividad);
 			
 		try {
-			mUsuario.getConexion().close();
+			mActividad.getConexion().close();
 		} catch (SQLException e) {
 			System.out.println("Errorea conexioa ixtean");
 			e.printStackTrace();
