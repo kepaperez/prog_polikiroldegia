@@ -55,6 +55,9 @@ public class ApiCrearActividad extends HttpServlet {
 		Actividad actividad = new Actividad();
 		
 		actividad.setNombre(jsonObject.getString("nombre"));
+		actividad.setDias(jsonObject.getString("dias"));
+		actividad.setHoras(jsonObject.getInt("horas"));
+		actividad.setPrecio(jsonObject.getInt("precio"));
 		
 		
 		//usuario.setNombreApellido(jsonObject.getString("nombreApellido"));
