@@ -19,13 +19,13 @@ import modelo.dao.ModeloUsuario;
  * Servlet implementation class ApiCreateUsuarios
  */
 @WebServlet("/ApiCreateUsuarios")
-public class ApiCreateUsuarios extends HttpServlet {
+public class ApiCrearUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ApiCreateUsuarios() {
+    public ApiCrearUsuarios() {
         super();
         // TODO Auto-generated constructor stub
     }
